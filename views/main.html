@@ -1,0 +1,44 @@
+<br>
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Exercise 1
+            <small>Instagram</small>
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+<h4>
+    #<input type="text" ng-model="tag" ng-init="tag = 'deftones'">
+    <button type="button" class="btn btn-primary" ng-click="gettags()">Search</button>
+</h4>
+<!-- Project One -->
+<!-- Project One -->
+<div ng-repeat="image in images">
+    <div class="row">
+        <div class="col-md-5">
+            <!--<a href="#">-->
+            <img class="img-responsive" src="{{ image.images.standard_resolution.url}}" alt="">
+            <!--</a>-->
+        </div>
+        <div class="col-md-3">
+            <h3>{{ image.caption.text}}</h3>
+            <h4>
+                <img ng-src="{{ image.user.profile_picture}}" width="40" height="40" /> 
+                <a href="#/users/{{ image.user.id}}">{{ image.user.username}}</a>
+            </h4>
+            <p>&hearts; {{ image.likes.count}} likes</p>
+            <p>Comments:</p>
+            <p class="comment" ng-repeat="comment in image.comments.data">
+                <cite class="author">
+                    <img ng-src="{{ comment.from.profile_picture}}" width="40" height="40" /> 
+                    {{ comment.from.username}}
+                </cite> 
+                {{ comment.text}}
+            </p>
+
+        </div>
+    </div>
+    <hr >
+</div>
+<!-- /.row -->

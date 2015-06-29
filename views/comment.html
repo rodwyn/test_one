@@ -1,0 +1,26 @@
+<br/>
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Exercise 2
+            <small>Github</small>
+        </h1>
+        <h2>{{someText}}</h2>
+        <h3>Comments</h3>
+    </div>
+</div>
+<!-- /.row -->
+<div ng-repeat="c in comments" class="col col-lg-12">
+    <div class="row">
+        <div class="col col-md-1">
+            <img alt="" class="avatar" height="65" src="{{c.user.avatar_url}}" width="65">
+        </div>
+        <div class="col col-md-11">
+            <h5>{{c.user.login}}&nbsp;commented&nbsp;{{c.created_at | date}}</h5>
+            <h4>{{c.body}}</h4>
+        </div>
+    </div>
+    <hr >
+</div>
+<br/>
+<!--<a href="#">All expenses</a>  <a href="#/somethingElse">Also all expenses</a>-->
